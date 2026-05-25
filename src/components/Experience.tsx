@@ -5,7 +5,7 @@ import { SectionTitle } from "./layout/SectionTitle";
 
 export function Experience() {
   return (
-    <section id="experience" className="scroll-mt-28 bg-bg-page py-16 md:py-24">
+    <section id="experience" className="scroll-section bg-bg-page py-16 md:py-24">
       <div className="container-main">
         <SectionTitle
           title="My"

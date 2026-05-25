@@ -24,8 +24,8 @@ export function Navbar() {
   };
 
   return (
-    <div className="fixed top-4 right-0 left-0 z-50 px-4 md:top-6 md:px-6">
-      <header className="nav-pill container-main flex items-center justify-between gap-4 rounded-full py-2.5 pl-5 pr-2.5 md:py-3 md:pl-6 md:pr-3">
+    <div className="fixed top-0 right-0 left-0 z-50 md:top-6 md:px-6">
+      <header className="nav-pill container-main flex w-full items-center justify-between gap-4 rounded-none border-x-0 border-t-0 py-3 pl-5 pr-2.5 max-md:shadow-[0_2px_12px_rgba(41,39,39,0.08)] md:rounded-full md:border md:py-3 md:pl-6 md:pr-3 dark:max-md:shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
         <a
           href="#home"
           onClick={(e) => {
@@ -88,7 +88,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="nav-pill container-main mt-2 rounded-3xl p-4 lg:hidden"
+            className="nav-pill container-main mt-0 rounded-none border-x-0 border-t-0 p-4 shadow-none lg:hidden"
           >
             <ul className="flex flex-col gap-1">
               {navLinks.map(({ id, label }) => (

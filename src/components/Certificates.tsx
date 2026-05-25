@@ -17,7 +17,7 @@ export function Certificates() {
   return (
     <section
       id="certificates"
-      className="scroll-mt-28 bg-bg-section py-16 md:py-24"
+      className="scroll-section bg-bg-section py-16 md:py-24"
     >
       <div className="container-main">
         <SectionTitle

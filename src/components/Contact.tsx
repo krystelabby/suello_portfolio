@@ -6,7 +6,7 @@ import { FacebookIcon, InstagramIcon } from "./SocialIcons";
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-28 bg-bg-section py-16 md:py-24">
+    <section id="contact" className="scroll-section bg-bg-section py-16 md:py-24">
       <div className="container-main">
         <SectionTitle
           title="Let's"

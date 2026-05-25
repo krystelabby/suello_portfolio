@@ -5,7 +5,7 @@ import { SkillIcon } from "./SkillIcon";
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-28 bg-bg-page py-16 md:py-24">
+    <section id="skills" className="scroll-section bg-bg-page py-16 md:py-24">
       <div className="container-main">
         <SectionTitle
           title="My Work"

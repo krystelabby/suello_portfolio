@@ -37,7 +37,7 @@ export function Projects() {
     : undefined;
 
   return (
-    <section id="projects" className="scroll-mt-28 bg-bg-section py-16 md:py-24">
+    <section id="projects" className="scroll-section bg-bg-section py-16 md:py-24">
       <div className="container-main">
         <SectionTitle
           title="My"
