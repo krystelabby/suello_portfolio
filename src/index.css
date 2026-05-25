@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-soft-pink: #f6c1d1;
+  --color-sage: #a8c3a0;
+  --color-sage-light: #c5d9be;
+  --color-cream: #faf7f2;
+  --color-peach: #f5d4c8;
+  --color-soft-orange: #e8c4a0;
+  --color-charcoal: #292727;
+
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-text-accent-pink: var(--text-accent-pink);
+  --color-text-accent-sage: var(--text-accent-sage);
+  --color-text-accent-orange: var(--text-accent-orange);
+
+  --color-bg-page: var(--bg-page);
+  --color-bg-section: var(--bg-section);
+  --color-bg-section-alt: var(--bg-section-alt);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-elevated: var(--bg-card-elevated);
+  --color-border-theme: var(--border-theme);
+
+  --font-sans: "Montserrat", system-ui, sans-serif;
+}
+
+:root {
+  --text-primary: #292727;
+  --text-body: #4b4a46;
+  --text-muted: #6a6662;
+  --text-accent-pink: #c97b8f;
+  --text-accent-sage: #5a7d52;
+  --text-accent-orange: #a67c52;
+
+  --bg-page: #fefefe;
+  --bg-section: #faf7f2;
+  --bg-section-alt: #f2f2f2;
+  --bg-card: #ffffff;
+  --bg-card-elevated: #f5f3f0;
+  --border-theme: color-mix(in srgb, #f6c1d1 35%, #e8e4e0);
+
+  --shadow-card: 0 8px 32px rgba(41, 39, 39, 0.06);
+  --shadow-card-hover: 0 16px 40px rgba(41, 39, 39, 0.1);
+  --shadow-nav: 0 12px 40px rgba(41, 39, 39, 0.08);
+}
+
+.dark {
+  --text-primary: #f4f2ef;
+  --text-body: #ddd9d4;
+  --text-muted: #b8b3ad;
+  --text-accent-pink: #f6c1d1;
+  --text-accent-sage: #a8c3a0;
+  --text-accent-orange: #e8c4a0;
+
+  --bg-page: #353432;
+  --bg-section: #3c3a38;
+  --bg-section-alt: #42403e;
+  --bg-card: #3a3937;
+  --bg-card-elevated: #454442;
+  --border-theme: color-mix(in srgb, #f6c1d1 20%, #4a4846);
+
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --shadow-nav: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--text-body);
+    background-color: var(--bg-page);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100svh;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, #f6c1d1 50%, var(--bg-page));
+    color: var(--text-primary);
+  }
+}
+
+@layer utilities {
+  .container-main {
+    @apply mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8;
+  }
+
+  .nav-pill {
+    background: color-mix(in srgb, var(--bg-card) 88%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-theme);
+    box-shadow: var(--shadow-nav);
+  }
+
+  .glass-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-theme);
+    box-shadow: var(--shadow-card);
+    transition: background-color 0.35s ease, border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .card-elevated {
+    background: var(--bg-card-elevated);
+    border: 1px solid var(--border-theme);
+    box-shadow: var(--shadow-card);
+  }
+
+  .text-highlight {
+    color: var(--text-accent-pink);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition;
+    background: var(--color-soft-pink);
+    color: var(--text-primary);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #f6c1d1 0%, #f5d4c8 100%);
+    box-shadow: 0 8px 24px rgba(246, 193, 209, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition;
+    border-color: var(--border-theme);
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-sage);
+    background: var(--bg-section);
+    transform: translateY(-1px);
+  }
+
+  .progress-accent {
+    background: linear-gradient(90deg, #f6c1d1 0%, #f5d4c8 55%, #a8c3a0 100%);
+  }
+
+  .pill-tag {
+    @apply inline-block rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider;
+    background: color-mix(in srgb, var(--color-sage) 30%, transparent);
+    color: var(--text-primary);
+  }
+}
